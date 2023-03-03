@@ -5,7 +5,7 @@ import BusinessDay from "@/interfaces/BusinessDay";
  * The status of the business at the time the hook is called, depending on the openingHours array in data/openingHours.ts.
  * @returns {[boolean, string]} An array containing the open status and a message.
  */
-const useCurrentlyOpen = (today: Date = new Date("March 3, 2023 19:00:00")) => {
+const useCurrentlyOpen = (today: Date = new Date()) => {
   const currentHour = parseFloat(today.getHours() + "." + today.getMinutes());
   const currentDay: BusinessDay = businessDays[today.getDay()];
   const isOpen = currentHour >= currentDay.startHour && currentHour < currentDay.endHour;
