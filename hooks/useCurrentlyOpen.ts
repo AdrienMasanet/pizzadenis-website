@@ -3,6 +3,7 @@ import BusinessDay from "@/interfaces/BusinessDay";
 
 /**
  * The status of the business at the time the hook is called, depending on the openingHours array in data/openingHours.ts.
+ * @param {Date} today The date to check the status of the business. Defaults to the current date. Useful for testing !
  * @returns {[boolean, string]} An array containing the open status and a message.
  */
 const useCurrentlyOpen = (today: Date = new Date()) => {
@@ -29,20 +30,37 @@ const useCurrentlyOpen = (today: Date = new Date()) => {
     }
   };
 
-  if (currentHour < currentDay.startHour - 2.3) {
-    message = "Nous sommes fermés jusqu'à XXX";
-  } else if (currentHour >= currentDay.startHour - 2.3 && currentHour < currentDay.startHour - 1) {
-    message = "Nous ouvrons bientôt";
-  } else if (currentHour >= currentDay.startHour - 1 && currentHour < currentDay.startHour) {
-    message = "Nous ouvrons très bientôt";
-  } else if (currentHour >= currentDay.startHour && currentHour < currentDay.endHour - 1) {
-    message = "Nous sommes ouverts";
-  } else if (currentHour >= currentDay.endHour - 1 && currentHour < currentDay.endHour - 0.3) {
-    message = "Nous fermons bientôt";
-  } else if (currentHour >= currentDay.endHour - 0.3 && currentHour < currentDay.endHour) {
-    message = "Nous fermons très bientôt";
-  } else if (currentHour >= currentDay.endHour) {
-    message = `Nous sommes fermés... Rendez-vous ${getNextOpeningDay(today.getDay()).name} dès ${getNextOpeningDay(today.getDay()).startHour}h !`;
+  const getMinutesDifference = (state: "closing" | "opening"): number => {
+    const eventTime: Date = new Date(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()} ${state === "closing" ? currentDay.endHour : currentDay.startHour}:00:00`);
+    const millisecondsDifference = (eventTime.getTime() - today.getTime()) as number;
+    const minutesDifference = Math.floor(millisecondsDifference / 60000);
+
+    return minutesDifference;
+  };
+
+  if (getMinutesDifference("opening") > 90) {
+    if (!currentDay.dayOff && currentDay.startHour) {
+      message = `Nous ouvrons à ${currentDay.startHour}h !`;
+    } else {
+      message = "Nous sommes fermés aujourd'hui...";
+    }
+  } else if (getMinutesDifference("opening") <= 90 && getMinutesDifference("opening") > 30) {
+    // Between 90 and 30 minutes before opening
+    message = "Nous ouvrons bientôt !";
+  } else if (getMinutesDifference("opening") <= 30 && getMinutesDifference("opening") > 0) {
+    // Between 30 and 0 minutes before opening
+    message = "Nous ouvrons très bientôt !";
+  } else if (getMinutesDifference("opening") <= 0 && getMinutesDifference("closing") > 60) {
+    // Between opening hour and 60 minutes before closing
+    message = "Nous sommes ouverts !";
+  } else if (getMinutesDifference("closing") <= 60 && getMinutesDifference("closing") > 30) {
+    // Between 60 and 30 minutes before closing
+    message = `Nous fermons bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
+  } else if (getMinutesDifference("closing") <= 30 && getMinutesDifference("closing") > 0) {
+    // Between 30 and 0 minutes before closing
+    message = `Attention, nous fermons très bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
+  } else if (getMinutesDifference("closing") <= 0) {
+    message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${getNextOpeningDay(today.getDay()).startHour}h !`;
   }
 
   return [isOpen, message];
