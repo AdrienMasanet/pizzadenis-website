@@ -57,20 +57,28 @@ body {
 /* Custom classes */
 .hoverable {
   cursor: pointer;
-}
 
-.hoverable::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  margin: auto;
-  background: var(--cl-black);
-  transition: width 0.3s;
-}
+  &.white {
+    &::after {
+      background: white;
+    }
+  }
 
-.hoverable:hover::after {
-  width: 100%;
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    background: var(--cl-black);
+    transition: width 0.3s;
+  }
 }
 
 .white-outline {
