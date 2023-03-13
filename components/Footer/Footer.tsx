@@ -5,7 +5,7 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-stone-900 text-white border-t-4 border-white/50 border-double">
+    <footer className="w-full bg-stone-900 text-white border-t-4 border-white/50 border-double" id="footer">
       <div className="max-w-screen-md mx-auto p-4 flex justify-evenly items-center md:gap-10">
         <nav className="flex-1 flex flex-col items-end">
           <Link className="w-fit hoverable white" href="/">
