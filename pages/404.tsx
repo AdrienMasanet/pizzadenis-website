@@ -1,6 +1,6 @@
 import Title from "@/components/Title/Title";
 import Subtitle from "@/components/Subtitle/Subtitle";
-import PizzaboxImage from "@/public/images/pizzabox.png";
+import pizzaboxImage from "@/public/images/pizzabox.png";
 import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -25,7 +25,7 @@ export default function Error404Page() {
       <main className="wooden-wall p-5 flex flex-col justify-center items-center" style={{ minHeight: `calc(100vh - ${footerHeight}px)` }}>
         <Title text="Oups..." whiteOutline />
         <Subtitle whiteOutline>Il semblerait que cette page n&apos;existe pas !</Subtitle>
-        <Image src={PizzaboxImage} alt="Boîte à pizza vide" className="my-20 drop-shadow-md select-none" />
+        <Image src={pizzaboxImage} alt="Boîte à pizza vide" className="my-20 drop-shadow-md select-none" />
       </main>
     </>
   );
