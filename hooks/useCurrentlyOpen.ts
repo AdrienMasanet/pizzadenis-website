@@ -1,5 +1,6 @@
 import businessDays from "@/data/businessDays";
 import BusinessDay from "@/interfaces/BusinessDay";
+import formatToHumanHour from "@/utils/formatToHumanHour";
 
 /**
  * The status of the business at the time the hook is called, depending on the openingHours array in data/openingHours.ts.
@@ -40,7 +41,7 @@ const useCurrentlyOpen = (today: Date = new Date()) => {
 
   if (getMinutesDifference("opening") > 90) {
     if (!currentDay.dayOff && currentDay.startHour) {
-      message = `Nous ouvrons à ${currentDay.startHour}h !`;
+      message = `Nous ouvrons à ${formatToHumanHour(currentDay.startHour)}h !`;
     } else {
       message = "Nous sommes fermés aujourd'hui...";
     }
@@ -60,7 +61,7 @@ const useCurrentlyOpen = (today: Date = new Date()) => {
     // Between 30 and 0 minutes before closing
     message = `Attention, nous fermons très bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
   } else if (getMinutesDifference("closing") <= 0) {
-    message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${getNextOpeningDay(today.getDay()).startHour}h !`;
+    message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${formatToHumanHour(getNextOpeningDay(today.getDay()).startHour)}h !`;
   }
 
   return [isOpen, message];
