@@ -5,6 +5,7 @@ import sliderImage2 from "@/public/images/slider/2.jpeg";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import CurrentlyOpen from "../CurrentlyOpen/CurrentlyOpen";
+import TripAdvisorLabel from "../TripAdvisorLabel/TripAdvisorLabel";
 
 const MainSlider = () => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -31,7 +32,7 @@ const MainSlider = () => {
   );
 
   return (
-    <div className="w-full py-28 relative overflow-hidden">
+    <div className="relative w-full py-28 overflow-hidden">
       <Image src={logoImage} alt="Pizza Denis depuis 1984" width={300} className="p-3 object-cover mx-auto white-outline" />
       <h1 className="mx-auto p-2 mb-10 font-babyaletha text-xl leading-9 text-center w-fit white-outline">
         <span className="px-3 rounded-lg rounded-b-none">Pizzas au feu de bois</span>
@@ -40,6 +41,9 @@ const MainSlider = () => {
       </h1>
       <hr className="h-10 invisible" />
       <CurrentlyOpen />
+      <div className="absolute right-0 bottom-0">
+        <TripAdvisorLabel />
+      </div>
       <div ref={sliderRef} className="keen-slider h-full !absolute top-0 -z-10 opacity-40">
         <div className="keen-slider__slide">
           <Image src={sliderImage1} alt="Slider image 1" fill className="object-cover" />
