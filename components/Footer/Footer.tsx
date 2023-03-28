@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import logoImage from "@/public/images/logo.png";
-import SocialMedia from "../SocialMedia/SocialMedia";
+import SocialMediaIcon from "../SocialMediaIcon/SocialMediaIcon";
+import socialFacebookImage from "@/public/images/social/facebook.svg";
+import socialYoutubeImage from "@/public/images/social/youtube.svg";
+import socialInstagramImage from "@/public/images/social/instagram.svg";
+import socialSoundcloudImage from "@/public/images/social/soundcloud.svg";
 
 const Footer = () => {
   return (
@@ -14,6 +18,9 @@ const Footer = () => {
           <Link className="w-fit hoverable white" href="la-carte">
             La carte des pizzas
           </Link>
+        </nav>
+        <Image src={logoImage} alt="Pizza Denis depuis 1984" height={150} className="flex-1 my-10 invert" />
+        <nav className="flex-1 flex flex-col items-start">
           <Link className="w-fit hoverable white" href="equipe">
             L&apos;équipe
           </Link>
@@ -21,10 +28,12 @@ const Footer = () => {
             Nous contacter
           </Link>
         </nav>
-        <Image src={logoImage} alt="Pizza Denis depuis 1984" height={150} className="flex-1 my-10 invert" />
-        <div className="flex-1">
-          <SocialMedia />
-        </div>
+      </div>
+      <div className="w-fit mx-auto mb-14 flex-1 flex items-center gap-5">
+        <SocialMediaIcon name="Facebook" link="https://www.facebook.com/people/Pizza-Denis/100054484358825/?locale=fr_FR" image={socialFacebookImage} />
+        <SocialMediaIcon name="Youtube" link="https://www.youtube.com/@pizzadenis/videos" image={socialYoutubeImage} />
+        <SocialMediaIcon name="Soundcloud" link="https://soundcloud.com/pizzadenis" image={socialSoundcloudImage} />
+        <SocialMediaIcon name="Instagram" link="https://www.instagram.com" image={socialInstagramImage} />
       </div>
       <hr className="my-1 opacity-10" />
       <p className="w-fit mx-auto py-1 text-center text-stone-600">
