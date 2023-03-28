@@ -10,14 +10,17 @@ const BusinessDayItem = ({ businessDay }: BusinessDayItemProps) => {
     <tbody>
       <tr className="my-1">
         <td className="capitalize py-1 px-2 ">
-          <span className="bg-stone-300 rounded p-1">{businessDay.name}</span>
+          <span className="bg-black text-white font-bold rounded p-1 mr-5">{businessDay.name}</span>
         </td>
         {businessDay.dayOff ? (
-          <td className="text-red-500">Fermé</td>
+          <td className="text-center text-red-500" colSpan={3}>
+            Fermé
+          </td>
         ) : (
           <>
-            <td>{formatToHumanHour(businessDay.startHour)}</td>
-            <td>{formatToHumanHour(businessDay.endHour)}</td>
+            <td className="text-center">{formatToHumanHour(businessDay.startHour)}</td>
+            <td className="px-2 mx-2">|</td>
+            <td className="text-center">{formatToHumanHour(businessDay.endHour)}</td>
           </>
         )}
       </tr>
