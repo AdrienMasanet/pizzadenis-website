@@ -49,6 +49,9 @@ const pizzas: Pizza[] = [
   { name: "Pepper", priceSmall: 12.5, priceBig: 15.5, ingredients: [ingredients.tomato, ingredients.onions, ingredients.pepperSauce, ingredients.mincedMeat, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Stromboli", priceSmall: 13.0, priceBig: 16.0, ingredients: [ingredients.cream, ingredients.roquefort, ingredients.onions, ingredients.mushrooms, ingredients.mincedMeat, ingredients.cheese], base: pizzaBases.creamBase },
   { name: "St Jacques", priceSmall: 12.5, priceBig: 15.5, ingredients: [ingredients.cream, ingredients.cheese, ingredients.freshScallopsWithCoral, ingredients.garlic, ingredients.parsley, ingredients.lemon], base: pizzaBases.creamBase },
+  { name: "Lydie", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.mushrooms, ingredients.pepper, ingredients.cheese], base: pizzaBases.tomatoBase },
+  { name: "Vegetarienne", priceSmall: 10.5, priceBig: 13.5, ingredients: [ingredients.tomato, ingredients.mushrooms, ingredients.artichokes, ingredients.pepper, ingredients.cheese], base: pizzaBases.tomatoBase },
+  { name: "Paysanne", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.onions, ingredients.baconBits, ingredients.cheese], base: pizzaBases.tomatoBase },
 ];
 
 export default pizzas;
