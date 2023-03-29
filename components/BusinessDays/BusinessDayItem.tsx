@@ -9,7 +9,7 @@ const BusinessDayItem = ({ businessDay }: BusinessDayItemProps) => {
   return (
     <tbody>
       <tr className="my-1">
-        <td className="capitalize py-1 px-2 ">
+        <td className="capitalize py-1 px-2">
           <span className="bg-black text-white font-bold rounded p-1 mr-5">{businessDay.name}</span>
         </td>
         {businessDay.dayOff ? (
