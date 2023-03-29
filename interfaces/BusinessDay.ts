@@ -1,7 +1,7 @@
 interface BusinessDay {
   name: string;
-  startHour: number;
-  endHour: number;
+  startHour?: number;
+  endHour?: number;
   dayOff?: boolean;
 }
 
