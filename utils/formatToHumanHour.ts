@@ -4,7 +4,7 @@
  * @param hour The hour to format
  * @returns {string} The formatted human-readable hour
  */
-export default function formatToHumanHour(hour: number) {
+export default function formatToHumanHour(hour: number): string {
   const hours: number = Math.floor(hour);
   const minutes: number = Math.round((hour - hours) * 100);
 
