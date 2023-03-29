@@ -10,7 +10,7 @@ import formatToHumanHour from "@/utils/formatToHumanHour";
 const useCurrentlyOpen = (today: Date) => {
   const currentHour = parseFloat(today.getHours() + "." + today.getMinutes());
   const currentDay: BusinessDay = businessDays[today.getDay()];
-  const isOpen = currentHour >= currentDay.startHour && currentHour < currentDay.endHour;
+  const isOpen = !currentDay.dayOff && currentHour >= currentDay.startHour! && currentHour < currentDay.endHour!;
   let message = "";
 
   const getNextOpeningDay = (from: number, tomorrow: boolean = true): BusinessDay => {
@@ -39,12 +39,10 @@ const useCurrentlyOpen = (today: Date) => {
     return minutesDifference;
   };
 
-  if (getMinutesDifference("opening") > 90) {
-    if (!currentDay.dayOff && currentDay.startHour) {
-      message = `Nous ouvrons à ${formatToHumanHour(currentDay.startHour)}h !`;
-    } else {
-      message = "Nous sommes fermés aujourd'hui...";
-    }
+  if (currentDay.dayOff || !currentDay.startHour || !currentDay.endHour || getMinutesDifference("closing") <= 0) {
+    message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${formatToHumanHour(getNextOpeningDay(today.getDay()).startHour!)}h !`;
+  } else if (getMinutesDifference("opening") > 90) {
+    message = `Nous ouvrons à ${formatToHumanHour(currentDay.startHour)}h !`;
   } else if (getMinutesDifference("opening") <= 90 && getMinutesDifference("opening") > 30) {
     // Between 90 and 30 minutes before opening
     message = "Nous ouvrons bientôt !";
@@ -60,8 +58,6 @@ const useCurrentlyOpen = (today: Date) => {
   } else if (getMinutesDifference("closing") <= 30 && getMinutesDifference("closing") > 0) {
     // Between 30 and 0 minutes before closing
     message = `Attention, nous fermons très bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
-  } else if (getMinutesDifference("closing") <= 0) {
-    message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${formatToHumanHour(getNextOpeningDay(today.getDay()).startHour)}h !`;
   }
 
   return [isOpen, message];
