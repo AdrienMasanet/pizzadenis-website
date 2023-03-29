@@ -15,6 +15,7 @@ const config = {
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
     "^@/services/(.*)$": "<rootDir>/services/$1",
     "^@/utils/(.*)$": "<rootDir>/utils/$1",
+    "^@/data/(.*)$": "<rootDir>/data/$1",
   },
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
