@@ -7,7 +7,7 @@ import formatToHumanHour from "@/utils/formatToHumanHour";
  * @param {Date} today The date to check the status of the business. Defaults to the current date. Useful for testing !
  * @returns {[boolean, string]} An array containing the open status and a message.
  */
-const useCurrentlyOpen = (today: Date = new Date()) => {
+const useCurrentlyOpen = (today: Date) => {
   const currentHour = parseFloat(today.getHours() + "." + today.getMinutes());
   const currentDay: BusinessDay = businessDays[today.getDay()];
   const isOpen = currentHour >= currentDay.startHour && currentHour < currentDay.endHour;
