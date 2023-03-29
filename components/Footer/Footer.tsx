@@ -9,9 +9,9 @@ import socialSoundcloudImage from "@/public/images/social/soundcloud.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-stone-900 text-white border-t-4 border-white/50 border-double" id="footer">
-      <div className="max-w-screen-md mx-auto p-4 flex justify-evenly items-center md:gap-10">
-        <nav className="flex-1 flex flex-col items-end">
+    <footer className="w-full bg-stone-900 text-white border-t-4 border-white/85 border-double" id="footer">
+      <div className="max-w-screen-md mx-auto p-4 flex flex-col md:flex-row justify-evenly items-center md:gap-10">
+        <nav className="order-2 md:order-1 flex-1 flex flex-col items-center md:items-end">
           <Link className="w-fit hoverable white" href="/">
             Accueil
           </Link>
@@ -19,8 +19,8 @@ const Footer = () => {
             La carte des pizzas
           </Link>
         </nav>
-        <Image src={logoImage} alt="Pizza Denis depuis 1984" height={150} className="flex-1 my-10 invert" />
-        <nav className="flex-1 flex flex-col items-start">
+        <Image src={logoImage} alt="Pizza Denis depuis 1984" height={150} className="order-1 md:order-2 flex-1 my-10 invert" />
+        <nav className="order-3 md:order-3 flex-1 flex flex-col items-center md:items-start mb-10 md:mb-0">
           <Link className="w-fit hoverable white" href="equipe">
             L&apos;équipe
           </Link>
