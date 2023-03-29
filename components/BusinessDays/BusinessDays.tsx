@@ -5,7 +5,7 @@ const BusinessDays = () => {
   if (!businessDays || businessDays.length < 7) return <div className="text-red-800 text-center">Erreur lors du chargement des horaires d&apos;ouverture</div>;
 
   return (
-    <table className="table-fixed border-black">
+    <table className="h-full m-auto table-fixed border-black">
       {businessDays.map((businessDay, index) => (
         <BusinessDayItem businessDay={businessDay} key={index} />
       ))}
