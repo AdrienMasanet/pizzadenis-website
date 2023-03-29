@@ -1,6 +1,22 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const TripAdvisorLabel = () => {
+  const [loadTrk, setLoadTrk] = useState<boolean>(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.jscache.com/wejs?wtype=excellent&uniq=685&locationId=5965360&lang=fr&display_version=2";
+    script.async = true;
+    script.setAttribute("data-loadtrk", loadTrk.toString());
+    script.onload = () => setLoadTrk(true);
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [loadTrk]);
+
   return (
     <div id="TA_excellent685" className="TA_excellent">
       <ul id="P1pstkZ977" className="TA_links abb0cQR">
@@ -10,7 +26,6 @@ const TripAdvisorLabel = () => {
           </a>
         </li>
       </ul>
-      <script async src="https://www.jscache.com/wejs?wtype=excellent&amp;uniq=685&amp;locationId=5965360&amp;lang=fr&amp;display_version=2" data-loadtrk></script>
     </div>
   );
 };
