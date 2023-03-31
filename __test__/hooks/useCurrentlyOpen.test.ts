@@ -4,7 +4,7 @@ jest.mock("@/data/businessDays", () => {
   return jest.requireActual("@/mocks/data/businessDaysMock");
 });
 
-describe("useCurrentlyOpen", () => {
+describe("hooks | useCurrentlyOpen", () => {
   it("should return correct opening status and message", () => {
     const testCases = [
       {
