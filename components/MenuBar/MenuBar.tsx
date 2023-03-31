@@ -5,7 +5,6 @@ const MenuBar = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const checkViewportWidth = () => {
-    console.log(window.innerWidth);
     if (typeof window !== "undefined") {
       window.innerWidth >= 768 ? setIsSmallScreen(false) : setIsSmallScreen(true);
     }
