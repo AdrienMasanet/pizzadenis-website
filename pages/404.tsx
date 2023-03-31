@@ -3,18 +3,16 @@ import Subtitle from "@/components/Subtitle/Subtitle";
 import pizzaboxImage from "@/public/images/pizzabox.png";
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export default function Error404Page() {
   const [footerHeight, setFooterHeight] = useState<number>(0);
 
   // Get the height of the footer to set the height of <main> and fill the viewport with the content
-  useEffect(() => {
+  useLayoutEffect(() => {
     const footer = document.querySelector("footer");
-    if (footer) {
-      setFooterHeight(footer.offsetHeight);
-    }
-  }, []);
+    if (footer) setFooterHeight(footer.offsetHeight);
+  }, [footerHeight]);
 
   return (
     <>
