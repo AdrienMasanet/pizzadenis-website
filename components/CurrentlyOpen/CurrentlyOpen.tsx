@@ -8,7 +8,7 @@ const CurrentlyOpen = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDateTime(new Date());
-    }, 1000 * 20); // Update opening status every 20 seconds to accurately display minutes left
+    }, 1000 * 10); // Update opening status every 20 seconds to accurately display minutes left
 
     return () => clearInterval(interval);
   }, []);
