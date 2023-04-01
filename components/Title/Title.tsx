@@ -4,16 +4,16 @@ type TitleProps = {
 };
 
 const Title = ({ text, whiteOutline }: TitleProps) => {
-  let index = 0; // Use a custom index instead of native map()'s one to skip it from incrementing when a space is found
-  const letters: JSX.Element[] = text.split("").map((letter) => {
+  let colorIndex = 0; // Use a custom index instead of native map()'s one to skip it from incrementing when a space is found
+  const letters: JSX.Element[] = text.split("").map((letter, index) => {
     if (letter === " ") {
       return <span key={index}>{letter}</span>;
     }
 
-    index++; // Index was not incremented if a space was found thanks to the early return above
+    colorIndex++; // Index was not incremented if a space was found thanks to the early return above
 
     return (
-      <span key={index} className={`text-${index % 2 === 0 ? "red" : "green"}-800`}>
+      <span key={index} className={`text-${colorIndex % 2 === 0 ? "red" : "green"}-800`}>
         {letter}
       </span>
     );
