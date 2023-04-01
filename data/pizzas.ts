@@ -31,7 +31,7 @@ const pizzas: Pizza[] = [
   { name: "Mélanie", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.roquefort, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Manon", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.goatCheese, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Gina", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.cream, ingredients.onions, ingredients.baconBits, ingredients.cheese], base: pizzaBases.creamBase },
-  { name: "Tartiflette", priceSmall: 13.0, priceBig: 16.0, ingredients: [ingredients.potatoes, ingredients.onions, ingredients.baconBits, ingredients.reblochon, ingredients.cream, ingredients.cheese], base: pizzaBases.creamBase },
+  { name: "Tartiflette", priceSmall: 13.0, priceBig: 16.0, ingredients: [ingredients.cream, ingredients.potatoes, ingredients.onions, ingredients.baconBits, ingredients.reblochon, ingredients.cheese], base: pizzaBases.creamBase },
   { name: "Charlottina", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.garlic, ingredients.pepper, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Sylvia", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.cheese, ingredients.pepper, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Marie Jeanne", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.mustard, ingredients.onions, ingredients.cheese], base: pizzaBases.tomatoBase },
