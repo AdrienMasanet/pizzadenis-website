@@ -13,7 +13,7 @@ export default function TeamPage() {
       <main className="wooden-wall py-16 p-5">
         <Title text="L'équipe" whiteOutline />
         <Subtitle whiteOutline>Nous sommes une équipe de passionnés qui met tout en œuvre pour vous acueillir chalereusement et vous préparer des pizzas artisanales avec amour !</Subtitle>
-        <section className="max-w-screen-xl mx-auto md:px-4"></section>
+        <section className="max-w-screen-xl mx-auto px-4"></section>
       </main>
     </>
   );

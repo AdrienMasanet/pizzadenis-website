@@ -38,9 +38,9 @@ const MainSlider = () => {
     <div className="relative w-full py-28 overflow-hidden">
       <Image src={logoImage} alt="Pizza Denis depuis 1984" width={300} className="p-3 object-cover mx-auto white-outline" />
       <h1 className="mx-auto p-2 mb-10 font-babyaletha text-xl leading-9 text-center w-fit white-outline">
-        <span className="px-3 rounded-lg rounded-b-none">Pizzas au feu de bois</span>
+        <span className="px-3 text-4xl rounded-lg rounded-b-none">Pizzas au feu de bois</span>
         <br />
-        <span className="px-3 rounded-lg">à emporter ou à déguster sur place</span>
+        <span className="px-3 text-4xl rounded-lg">à emporter ou à déguster sur place</span>
       </h1>
       <hr className="h-10 invisible" />
       <CurrentlyOpen />

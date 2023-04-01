@@ -19,7 +19,7 @@ const Title = ({ text, whiteOutline }: TitleProps) => {
     );
   });
 
-  return <h1 className={`mt-16 text-center text-4xl font-roastchicken uppercase ${whiteOutline ? "white-outline" : ""}`}>{letters}</h1>;
+  return <h1 className={`mt-16 mb-6 text-center text-5xl font-roastchicken uppercase ${whiteOutline ? "white-outline" : ""}`}>{letters}</h1>;
 };
 
 export default Title;

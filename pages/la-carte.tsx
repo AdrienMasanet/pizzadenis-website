@@ -17,7 +17,7 @@ export default function MenuPage() {
       <main className="wooden-wall py-16 p-5">
         <Title text="Nos pizzas" whiteOutline />
         <Subtitle whiteOutline>Voici la carte des pizzas que vous pouvez commander à emporter ! Elles sont préparées au feu de bois avec des ingrédients frais et délicieux. Nous vous proposons des pizzas gourmandes, des pizzas aux fruits de mer ou des pizzas végétariennes ! À vous de choisir !</Subtitle>
-        <section className="max-w-screen-xl mx-auto md:px-4">
+        <section className="max-w-screen-xl mx-auto">
           <Filters />
           <Menu pizzas={filteredPizzaList} />
         </section>

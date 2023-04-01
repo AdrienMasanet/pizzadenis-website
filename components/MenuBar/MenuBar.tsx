@@ -27,7 +27,7 @@ const MenuBar = () => {
   if (isSmallScreen) {
     return (
       <header className="flex justify-center">
-        <select value={window.location.pathname} className="fixed w-5/6 p-2 top-5 text-center font-roastchicken rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg z-50 uppercase outline-none" onChange={switchPage}>
+        <select value={window.location.pathname} className="fixed w-5/6 p-2 top-5 text-xl text-center font-roastchicken rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg z-50 uppercase outline-none" onChange={switchPage}>
           <option value="/">Accueil</option>
           <option value="/la-carte">La carte des pizzas</option>
           <option value="/equipe">L&apos;équipe</option>

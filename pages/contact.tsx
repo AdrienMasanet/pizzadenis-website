@@ -14,7 +14,7 @@ export default function ContactPage() {
       <main className="bg-contact py-16 p-5">
         <Title text="Contactez-nous" whiteOutline />
         <Subtitle whiteOutline>Consectetur ullamco minim sunt ad Lorem deserunt ea. Commodo non excepteur elit irure ex tempor et velit occaecat eu fugiat. Tempor qui elit laboris occaecat do eu eiusmod duis ex veniam deserunt et velit. Nostrud et eu proident in quis voluptate tempor cupidatat enim ullamco. Laboris officia fugiat aute irure laborum aliqua in amet amet Lorem ipsum.</Subtitle>
-        <section className="max-w-screen-xl mx-auto md:px-4 my-24 flex items-center justify-evenly gap-5 flex-col md:flex-row">
+        <section className="max-w-screen-xl mx-auto px-4 my-24 flex items-center justify-evenly gap-5 flex-col md:flex-row">
           <div className="self-stretch rounded-lg m-0 bg-stone-50/70 p-4 text-xl shadow-md border border-black/20">
             <BusinessDays />
           </div>
