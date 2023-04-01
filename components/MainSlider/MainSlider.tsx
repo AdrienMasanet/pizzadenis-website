@@ -4,8 +4,11 @@ import sliderImage1 from "@/public/images/slider/1.jpeg";
 import sliderImage2 from "@/public/images/slider/2.jpeg";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import CurrentlyOpen from "../CurrentlyOpen/CurrentlyOpen";
-import TripAdvisorLabel from "../TripAdvisorLabel/TripAdvisorLabel";
+import TripAdvisorLabel from "@/components/TripAdvisorLabel/TripAdvisorLabel";
+import dynamic from "next/dynamic";
+
+// Importing this component dynamically to only load it on the client side and avoid hydration errors
+const CurrentlyOpen = dynamic(() => import("@/components/CurrentlyOpen/CurrentlyOpen"), { ssr: false });
 
 const MainSlider = () => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
