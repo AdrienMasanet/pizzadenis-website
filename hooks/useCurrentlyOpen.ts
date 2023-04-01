@@ -32,7 +32,7 @@ const useCurrentlyOpen = (today: Date) => {
   };
 
   const getMinutesDifference = (state: "closing" | "opening"): number => {
-    const eventTime: Date = new Date(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()} ${state === "closing" ? currentDay.endHour : currentDay.startHour}:00:00`);
+    const eventTime: Date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), state === "closing" ? currentDay.endHour : currentDay.startHour, 0, 0);
     const millisecondsDifference = (eventTime.getTime() - today.getTime()) as number;
     const minutesDifference = Math.floor(millisecondsDifference / 60000);
 

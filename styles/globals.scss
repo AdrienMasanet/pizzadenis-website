@@ -103,40 +103,22 @@ body {
 }
 
 @keyframes neon-anim {
-  0% {
-    border-left: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
-    border-top: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
-    border-right: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
-    border-bottom: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
-    filter: drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 15em $cl-neon-green) drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 2em lighten(rgba($cl-neon-green, 0.4), 30%)) drop-shadow(-0.1em -0.1em 0.2em lighten($cl-neon-green, 85%));
-  }
-  46% {
-    border-left: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
-    border-top: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
-    border-right: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
-    border-bottom: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
-    filter: drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 15em $cl-neon-green) drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 2em lighten(rgba($cl-neon-green, 0.4), 30%)) drop-shadow(-0.1em -0.1em 0.2em lighten($cl-neon-green, 85%));
-  }
-  54% {
-    border-left: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
-    border-top: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
-    border-right: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
-    border-bottom: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
-    filter: drop-shadow($neon-anim-distance $neon-anim-distance 15em $cl-neon-red) drop-shadow($neon-anim-distance $neon-anim-distance 2em lighten(rgba($cl-neon-red, 0.4), 30%)) drop-shadow(0.1em 0.1em 0.2em lighten($cl-neon-red, 85%));
-  }
-  92% {
-    border-left: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
-    border-top: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
-    border-right: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
-    border-bottom: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
-    filter: drop-shadow($neon-anim-distance $neon-anim-distance 15em $cl-neon-red) drop-shadow($neon-anim-distance $neon-anim-distance 2em lighten(rgba($cl-neon-red, 0.4), 30%)) drop-shadow(0.1em 0.1em 0.2em lighten($cl-neon-red, 85%));
-  }
+  0%,
+  46%,
   100% {
     border-left: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
     border-top: 2px solid lighten($cl-neon-green, $neon-anim-light-contrast);
     border-right: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
     border-bottom: 2px solid darken($cl-neon-red, $neon-anim-light-contrast/5);
-    filter: drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 15em $cl-neon-green) drop-shadow((-$neon-anim-distance) (-$neon-anim-distance) 2em lighten(rgba($cl-neon-green, 0.4), 30%)) drop-shadow(-0.1em -0.1em 0.2em lighten($cl-neon-green, 85%));
+    box-shadow: (-$neon-anim-distance) (-$neon-anim-distance) 15em $cl-neon-green, (-$neon-anim-distance) (-$neon-anim-distance) 2em lighten(rgba($cl-neon-green, 0.4), 30%), -0.1em -0.1em 0.2em lighten($cl-neon-green, 85%);
+  }
+  54%,
+  92% {
+    border-left: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
+    border-top: 2px solid darken($cl-neon-green, $neon-anim-light-contrast/5);
+    border-right: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
+    border-bottom: 2px solid lighten($cl-neon-red, $neon-anim-light-contrast);
+    box-shadow: $neon-anim-distance $neon-anim-distance 15em $cl-neon-red, $neon-anim-distance $neon-anim-distance 2em lighten(rgba($cl-neon-red, 0.4), 30%), 0.1em 0.1em 0.2em lighten($cl-neon-red, 85%);
   }
 }
 
