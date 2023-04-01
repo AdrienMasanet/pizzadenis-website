@@ -91,6 +91,12 @@ body {
   background-repeat: repeat;
 }
 
+.bg-contact {
+  background: url("/images/contact.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+}
+
 .neon-borders {
   background-color: white;
   animation: neon-anim 2s infinite linear;
