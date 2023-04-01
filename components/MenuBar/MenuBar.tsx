@@ -1,7 +1,9 @@
 import MenuBarItem from "./MenuBarItem";
 import { useState, useLayoutEffect } from "react";
+import { useRouter } from "next/router";
 
 const MenuBar = () => {
+  const router = useRouter();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const checkViewportWidth = () => {
@@ -11,7 +13,7 @@ const MenuBar = () => {
   };
 
   const switchPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    window.location.pathname = e.target.value;
+    router.push(e.target.value);
   };
 
   useLayoutEffect(() => {
