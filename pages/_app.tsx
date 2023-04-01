@@ -3,6 +3,7 @@ import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import MenuBar from "@/components/MenuBar/MenuBar";
 import Footer from "@/components/Footer/Footer";
+import { PizzaListProvider } from "@/context/PizzaListContext";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <MenuBar />
-      <Component {...pageProps} />
+      <PizzaListProvider>
+        <Component {...pageProps} />
+      </PizzaListProvider>
       <Footer />
     </>
   );
