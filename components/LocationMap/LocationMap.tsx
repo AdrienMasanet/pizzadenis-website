@@ -10,12 +10,12 @@ const LocationMap = () => {
   const marker = useRef<any>();
 
   const redirectToGoogleMaps = () => {
-    window.open("https://www.google.com/maps/place/Pizza+Denis/@42.7748114,2.9896778,15z/data=!4m2!3m1!1s0x0:0xe07705f6bf2b72a?sa=X&ved=2ahUKEwjv7MiMgNr9AhWcQ6QEHa7EAF0Q_BJ6BAhcEAg", "_blank");
+    window.open(process.env.NEXT_PUBLIC_GOOGLE_MAPS_LINK, "_blank");
   };
 
   useEffect(() => {
     map.current = new mapboxgl.Map({
-      accessToken: process.env.NEXT_PUBLIC_MAPBIX_API_KEY ?? "",
+      accessToken: process.env.NEXT_PUBLIC_MAPBOX_API_KEY ?? "",
       container: mapContainer.current as HTMLElement,
       style: "mapbox://styles/mapbox/streets-v10",
       center: [2.9896782683347594, 42.77480594492797],
