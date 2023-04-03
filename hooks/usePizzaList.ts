@@ -3,9 +3,9 @@ import { PizzaListContext, PizzaListUpdateContext } from "@/context/PizzaListCon
 
 const usePizzaList = () => {
   const { allPizzaList, pizzaListFilters, filteredPizzaList } = useContext(PizzaListContext);
-  const { setFilteredPizzaList, setPizzaListFilters } = useContext(PizzaListUpdateContext);
+  const { setPizzaListFilters } = useContext(PizzaListUpdateContext);
 
-  return { allPizzaList, filteredPizzaList, pizzaListFilters, setFilteredPizzaList, setPizzaListFilters };
+  return { allPizzaList, filteredPizzaList, pizzaListFilters, setPizzaListFilters };
 };
 
 export default usePizzaList;

@@ -14,7 +14,7 @@ export const PizzaListContext = createContext<{ allPizzaList: Pizza[]; filteredP
     containsSeaFood: false,
   },
 });
-export const PizzaListUpdateContext = createContext({ setFilteredPizzaList: (pizzaList: Pizza[]) => {}, setPizzaListFilters: (pizzaListFilters: PizzaListFilters) => {} });
+export const PizzaListUpdateContext = createContext({ setPizzaListFilters: (pizzaListFilters: PizzaListFilters) => {} });
 
 export const PizzaListProvider = ({ children }: { children: React.ReactNode }) => {
   const [allPizzaList, setAllPizzaList] = useState<Pizza[]>(pizzas);
@@ -53,7 +53,7 @@ export const PizzaListProvider = ({ children }: { children: React.ReactNode }) =
 
   return (
     <PizzaListContext.Provider value={{ allPizzaList, pizzaListFilters, filteredPizzaList }}>
-      <PizzaListUpdateContext.Provider value={{ setFilteredPizzaList, setPizzaListFilters }}>{children}</PizzaListUpdateContext.Provider>
+      <PizzaListUpdateContext.Provider value={{ setPizzaListFilters }}>{children}</PizzaListUpdateContext.Provider>
     </PizzaListContext.Provider>
   );
 };
