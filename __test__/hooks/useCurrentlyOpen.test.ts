@@ -1,5 +1,6 @@
 import useCurrentlyOpen from "@/hooks/useCurrentlyOpen";
 
+// Mock the businessdays data
 jest.mock("@/data/businessDays", () => {
   return jest.requireActual("@/mocks/data/businessDaysMock");
 });
