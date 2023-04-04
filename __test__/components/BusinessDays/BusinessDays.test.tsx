@@ -1,13 +1,14 @@
-import BusinessDay from "@/interfaces/BusinessDay";
 import BusinessDays from "@/components/BusinessDays/BusinessDays";
-import businessDaysMock from "@/mocks/data/businessDaysMock";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
+// Mock the businessdays data
+jest.mock("@/data/businessDays", () => {
+  return jest.requireActual("@/mocks/data/businessDaysMock");
+});
+
 describe("components | BusinessDayItem", () => {
   beforeEach(() => {
-    jest.mock("@/data/businessDays", () => businessDaysMock);
-
     render(<BusinessDays />);
   });
 
