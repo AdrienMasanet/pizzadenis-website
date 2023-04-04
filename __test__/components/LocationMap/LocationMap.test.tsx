@@ -10,7 +10,7 @@ jest.mock("mapbox-gl", () => ({
   })),
 }));
 
-describe("component | LocationMap", () => {
+describe("components | LocationMap", () => {
   beforeEach(() => {
     render(<LocationMap />);
   });

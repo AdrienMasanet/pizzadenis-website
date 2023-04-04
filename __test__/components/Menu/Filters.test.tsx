@@ -4,7 +4,7 @@ import Filters from "@/components/Menu/Filters";
 import { PizzaListContext } from "@/context/PizzaListContext";
 import { PizzaListProvider } from "@/context/PizzaListContext";
 
-describe("Filters", () => {
+describe("components | Filters", () => {
   const renderFilters = () => {
     return render(
       <PizzaListProvider>
