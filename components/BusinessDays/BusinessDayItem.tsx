@@ -9,8 +9,8 @@ const BusinessDayItem = ({ businessDay }: BusinessDayItemProps) => {
   return (
     <tbody>
       <tr className="my-1">
-        <td className="capitalize py-1 px-2">
-          <span className="font-bold rounded p-1 mr-5">{businessDay.name}</span>
+        <td className="capitalize py-1">
+          <span className="font-bold rounded mr-10">{businessDay.name}</span>
         </td>
         {!businessDay.dayOff && businessDay.startHour && businessDay.endHour ? (
           <>
