@@ -1,6 +1,6 @@
 import Pizza from "@/interfaces/Pizza";
-import * as pizzaBases from "@/data/pizzaBases";
-import * as ingredients from "@/data/ingredients";
+import * as pizzaBases from "@/mocks/data/pizzaBasesMock";
+import * as ingredients from "@/mocks/data/ingredientsMock";
 
 const pizzasMock: Pizza[] = [
   { name: "Marguerita", priceSmall: 8.0, priceBig: 11.0, ingredients: [ingredients.tomato, ingredients.cheese], base: pizzaBases.tomatoBase },
