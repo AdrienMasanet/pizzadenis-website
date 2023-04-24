@@ -37,11 +37,11 @@ const MainSlider = () => {
   return (
     <div className="relative w-full py-20 md:py-36 overflow-hidden">
       <Image src={logoImage} alt="Pizza Denis depuis 1984" width={300} className="p-3 object-cover mx-auto white-outline" />
-      <h1 className="mx-auto p-2 md:mb-20 font-babyaletha text-xl leading-9 text-center w-fit white-outline">
+      <p className="mx-auto p-2 md:mb-20 font-babyaletha text-xl leading-9 text-center w-fit white-outline">
         <span className="px-3 text-4xl rounded-lg rounded-b-none">Pizzas au feu de bois</span>
         <br />
         <span className="px-3 text-4xl rounded-lg">à emporter ou à déguster sur place</span>
-      </h1>
+      </p>
       <CurrentlyOpen />
       <div className="absolute right-0 bottom-0">
         <TripAdvisorLabel />
