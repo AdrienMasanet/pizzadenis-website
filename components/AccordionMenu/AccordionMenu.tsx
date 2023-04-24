@@ -34,7 +34,7 @@ const AccordionMenu = ({ items }: AccordionMenuProps) => {
       {items.map((item, index) => (
         <div key={index}>
           <div>
-            <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(item.title)}>
+            <div className="flex justify-between items-center cursor-pointer select-none" onClick={() => toggleAccordion(item.title)}>
               <h3 className="uppercase font-bold">{item.title}</h3>
               <span className={`text-xl select-none transition-rotate duration-300 ease-out ${openedAccordions[item.title] ? "rotate-90" : ""}`}>›</span>
             </div>
