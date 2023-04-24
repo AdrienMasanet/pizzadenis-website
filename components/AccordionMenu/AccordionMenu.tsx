@@ -27,7 +27,6 @@ const AccordionMenu = ({ items }: AccordionMenuProps) => {
       ...openedAccordions,
       [title]: !openedAccordions[title],
     });
-    console.log(document.querySelector(`#${title}-content`)?.scrollHeight);
   }
 
   return (
