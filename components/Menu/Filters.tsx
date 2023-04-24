@@ -19,7 +19,7 @@ const Filters = () => {
   }, [pizzaListFilters]);
 
   return (
-    <div className="w-full my-8 px-4 py-2 flex flex-row gap-1 lg:gap-2 items-center flex-wrap justify-evenly md:justify-between text-xs lg:text-base bg-white rounded-lg border border-black/20 shadow-md">
+    <div className="w-full my-4 md:my-8 px-4 py-2 flex flex-row gap-2 items-center flex-wrap justify-evenly md:justify-between text-xs lg:text-base bg-white rounded-lg border border-black/20 shadow-md">
       <input ref={nameInput} className="w-full grow md:w-auto px-2 py-1 rounded-lg border border-black/20 shadow-md" type="text" placeholder="Recherche" onChange={() => setPizzaListFilters({ ...pizzaListFilters, name: nameInput.current!.value })} />
       <select ref={baseInput} defaultValue={"all"} className="w-full md:w-auto px-2 py-1 rounded-lg border border-black/20 shadow-md" name="base" onChange={() => setPizzaListFilters({ ...pizzaListFilters, base: baseInput.current!.value })} data-testid="base-select">
         <option value="all">Toutes les bases</option>

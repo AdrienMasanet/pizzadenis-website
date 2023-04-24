@@ -63,7 +63,7 @@ const LocationMap = () => {
   return (
     <>
       <Image ref={marker} className="absolute drop-shadow-lg hoverable" onClick={redirectToGoogleMaps} src={favicon} alt="Marqueur de carte avec le logo de Pizza Denis" width={40} />
-      <div className="w-full md:w-4/6 h-80 bg-white rounded-lg border border-black/20 shadow-md" ref={mapContainer}></div>
+      <div className="w-full h-80 bg-white rounded-lg border border-black/20 shadow-md" ref={mapContainer}></div>
     </>
   );
 };
