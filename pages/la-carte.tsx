@@ -52,7 +52,7 @@ export default function MenuPage() {
                 children: (
                   <ul className="text-sm">
                     {Object.keys(getSupplements()).map((supplementsByPrice) => (
-                      <p key={supplementsByPrice}>
+                      <li key={supplementsByPrice}>
                         {getSupplements()[supplementsByPrice].map((supplement: Ingredient, index) => (
                           <span key={supplement.name}>
                             &nbsp;
@@ -61,7 +61,7 @@ export default function MenuPage() {
                           </span>
                         ))}
                         &nbsp;: <span className="underline">{supplementsByPrice}€</span>
-                      </p>
+                      </li>
                     ))}
                   </ul>
                 ),

@@ -93,12 +93,12 @@ const MenuBar = () => {
             className={`${isMobileMenuOpen ? "border-b border-black/20 shadow-2xl" : "py-0 shadow-none"} transition-all duration-700 overflow-hidden select-none`}
             style={{ maxHeight: isMobileMenuOpen ? mobileMenuRef.current?.scrollHeight + "px" : "0px" }}
           >
-            <ul className="flex flex-col gap-5 w-fit mx-auto pt-5 pb-10 text-center font-bignoodletitling text-lg select-none">
+            <div className="flex flex-col gap-5 w-fit mx-auto pt-5 pb-10 text-center font-bignoodletitling text-lg select-none">
               <MenuBarItem text="Accueil" link="/" onClickCallback={() => setIsMobileMenuOpen(false)} />
               <MenuBarItem text="La carte des pizzas" link="/la-carte" onClickCallback={() => setIsMobileMenuOpen(false)} />
               {/*<MenuBarItem text="L'équipe" link="/equipe" onClickCallback={() => setIsMobileMenuOpen(false)} />*/}
               <MenuBarItem text="Nous contacter" link="/contact" onClickCallback={() => setIsMobileMenuOpen(false)} />
-            </ul>
+            </div>
           </nav>
         </div>
       </header>
