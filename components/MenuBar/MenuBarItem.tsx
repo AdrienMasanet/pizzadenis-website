@@ -1,14 +1,24 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type MenuBarItemProps = {
   text: string;
   link: string;
+  onClickCallback?: () => void;
 };
 
-export const MenuBarItem = ({ text, link }: MenuBarItemProps) => {
+export const MenuBarItem = ({ text, link, onClickCallback }: MenuBarItemProps) => {
+  const router = useRouter();
+  const [currentPath, setCurrentPath] = useState<string>("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, [router]);
+
   return (
-    <Link className="list-none px-3 py-1 rounded hoverable text-2xl font-light" href={link}>
-      <p>{text}</p>
+    <Link className={`${link === currentPath ? "active" : ""} list-none rounded hoverable select-none`} href={link} onClick={onClickCallback}>
+      {text}
     </Link>
   );
 };
