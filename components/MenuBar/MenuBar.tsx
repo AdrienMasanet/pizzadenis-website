@@ -96,7 +96,7 @@ const MenuBar = () => {
             <ul className="flex flex-col gap-5 w-fit mx-auto pt-5 pb-10 text-center font-bignoodletitling text-lg select-none">
               <MenuBarItem text="Accueil" link="/" onClickCallback={() => setIsMobileMenuOpen(false)} />
               <MenuBarItem text="La carte des pizzas" link="/la-carte" onClickCallback={() => setIsMobileMenuOpen(false)} />
-              <MenuBarItem text="L'équipe" link="/equipe" onClickCallback={() => setIsMobileMenuOpen(false)} />
+              {/*<MenuBarItem text="L'équipe" link="/equipe" onClickCallback={() => setIsMobileMenuOpen(false)} />*/}
               <MenuBarItem text="Nous contacter" link="/contact" onClickCallback={() => setIsMobileMenuOpen(false)} />
             </ul>
           </nav>
@@ -111,8 +111,10 @@ const MenuBar = () => {
         <MenuBarItem text="Accueil" link="/" />
         <hr className="w-2 bg-black border border-black  m-auto" />
         <MenuBarItem text="La carte des pizzas" link="/la-carte" />
+        {/*
         <hr className="w-2 bg-black border border-black  m-auto" />
         <MenuBarItem text="L'équipe" link="/equipe" />
+        */}
         <hr className="w-2 bg-black border border-black  m-auto" />
         <MenuBarItem text="Nous contacter" link="/contact" />
       </nav>
