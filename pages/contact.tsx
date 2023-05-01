@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="self-stretch rounded-lg m-0 bg-stone-50/70 p-4 text-xl shadow-md border border-black/20">
             <BusinessDays />
           </div>
-          <div className="grow">
+          <div className="w-full grow">
             <LocationMap />
           </div>
         </section>
