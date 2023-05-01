@@ -52,6 +52,7 @@ const MainSlider = () => {
         </div>
         <div className="keen-slider__slide slider-video">
           <iframe
+            title="Pizza Denis clip"
             id="ytplayer"
             width="720"
             height="405"
