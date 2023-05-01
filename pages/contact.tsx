@@ -6,13 +6,19 @@ import AccordionMenu from "@/components/AccordionMenu/AccordionMenu";
 import Head from "next/head";
 
 export default function ContactPage() {
+  const pageTitle: string = "Pizza Denis | Nous contacter";
+  const pageDescription: string =
+    "Vous avez des questions sur notre pizzeria, notre menu ou nos options de commande ? Contactez-nous dès maintenant ! Notre équipe se fera un plaisir de répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone, par e-mail ou en remplissant le formulaire de contact ci-dessous. Nous sommes situés à Saint Laurent de la Salanque, à proximité de Perpignan, Barcarès et Canet en Roussillon. N'hésitez pas à nous contacter pour organiser une commande de pizzas pour vos événements privés ou professionnels. Chez Pizza Denis, nous sommes à votre écoute pour vous offrir le meilleur service possible.";
+
   return (
     <>
       <Head>
-        <title>Pizza Denis | Nous contacter</title>
-        <meta name="description" content="Vous avez des questions sur notre pizzeria, notre menu ou nos options de commande ? Contactez-nous dès maintenant ! Notre équipe se fera un plaisir de répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone, par e-mail ou en remplissant le formulaire de contact ci-dessous. Nous sommes situés à Saint Laurent de la Salanque, à proximité de Perpignan, Barcarès et Canet en Roussillon. N'hésitez pas à nous contacter pour organiser une commande de pizzas pour vos événements privés ou professionnels. Chez Pizza Denis, nous sommes à votre écoute pour vous offrir le meilleur service possible." />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
       </Head>
-      <main className="bg-contact py-5 md:py-16 p-5">
+      <main className="bg-contact p-5 md:py-16">
         <Title text="Contactez-nous" whiteOutline />
         <Subtitle whiteOutline>
           Vous avez des questions, des suggestions ou des demandes particulières ?
@@ -44,11 +50,21 @@ export default function ContactPage() {
               },
               {
                 title: "Faites-vous des livraisons ?",
-                children: <p>Malheureusement, nous ne pouvons pas livrer à domicile. Vous pouvez commander vos pizzas à emporter et nous vous donnerons une heure approximative où vous pourrez venir les récupérer !</p>,
+                children: (
+                  <p>
+                    Malheureusement, nous ne pouvons pas livrer à domicile. Vous pouvez commander vos pizzas à emporter et nous vous donnerons une heure approximative où vous pourrez venir les
+                    récupérer !
+                  </p>
+                ),
               },
               {
                 title: "Pourquoi êtes vous sur SoundCloud ?",
-                children: <p>C&apos;est parce que Denis est aussi un musicien passionné qui compose et joue de la musique ! Vous pouvez écouter ses compositions sur son profil SoundCloud ou venir au magasin parler guitare avec lui 🎸</p>,
+                children: (
+                  <p>
+                    C&apos;est parce que Denis est aussi un musicien passionné qui compose et joue de la musique ! Vous pouvez écouter ses compositions sur son profil SoundCloud ou venir au magasin
+                    parler guitare avec lui 🎸
+                  </p>
+                ),
               },
             ]}
           />
