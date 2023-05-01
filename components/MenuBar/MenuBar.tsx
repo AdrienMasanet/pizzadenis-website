@@ -107,7 +107,7 @@ const MenuBar = () => {
 
   return (
     <header className="flex justify-center">
-      <nav className="menubar fixed w-fit flex p-2 top-5 gap-5 justify-center text-2xl text-center font-roastchicken rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg z-50 uppercase">
+      <nav className="menubar fixed w-fit flex p-3 px-7 top-5 gap-10 justify-center text-2xl text-center font-roastchicken rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg z-50 uppercase">
         <MenuBarItem text="Accueil" link="/" />
         <hr className="w-2 bg-black border border-black  m-auto" />
         <MenuBarItem text="La carte des pizzas" link="/la-carte" />
