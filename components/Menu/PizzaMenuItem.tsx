@@ -39,7 +39,7 @@ const PizzaMenuItem = ({ pizza }: PizzaMenuItemProps) => {
         onClick={() =>
           openModal(
             <Image
-              className="object-cover rounded-lg"
+              className="object-cover"
               src={`/images/pizzas/${pizza.name.toLowerCase()}.jpeg`}
               width={1000}
               height={1000}
