@@ -42,11 +42,16 @@ export default function ContactPage() {
             items={[
               {
                 title: "Quels sont les modes de paiement acceptés ?",
-                children: <p>Nous acceptons les paiements par carte bancaire, paylib, espèces et tickets restos. Attention, nous ne prenons pas les chèques !</p>,
+                children: <p>Nous acceptons les paiements par carte bancaire, paylib, espèces et cartes ticket restaurant. Attention, nous ne prenons pas les chèques !</p>,
               },
               {
                 title: "Acceptez-vous les tickets restaurants ?",
-                children: <p>Oui, nous prenons les tickets Edenred, Apetiz, Sodexo, les chèques de table et les chèques déjeuner. Attention, nous ne prenons pas les chèques ANCV !</p>,
+                children: (
+                  <p>
+                    Oui, nous prenons les tickets Edenred, Apetiz, Sodexo, les chèques de table et les chèques déjeuner. Attention, nous ne prenons pas les chèques ANCV ni les tickets restaurant au
+                    format papier !
+                  </p>
+                ),
               },
               {
                 title: "Faites-vous des livraisons ?",

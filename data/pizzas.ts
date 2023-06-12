@@ -7,7 +7,7 @@ const pizzas: Pizza[] = [
   { name: "Prochutto", priceSmall: 9.0, priceBig: 12.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Provencale", priceSmall: 9.0, priceBig: 12.0, ingredients: [ingredients.tomato, ingredients.garlic, ingredients.mushrooms, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Romana", priceSmall: 9.0, priceBig: 12.0, ingredients: [ingredients.tomato, ingredients.chorizo, ingredients.cheese], base: pizzaBases.tomatoBase },
-  { name: "Cippolina", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.cheese], base: pizzaBases.tomatoBase },
+  { name: "Cippolina", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.chorizo, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Isabella", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.mushrooms, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Royale", priceSmall: 11.0, priceBig: 13.5, ingredients: [ingredients.tomato, ingredients.ham, ingredients.mushrooms, ingredients.chorizo, ingredients.cheese], base: pizzaBases.tomatoBase },
   { name: "Vesuvia", priceSmall: 10.0, priceBig: 13.0, ingredients: [ingredients.tomato, ingredients.ham, ingredients.artichokes, ingredients.cheese, ingredients.olives], base: pizzaBases.tomatoBase },

@@ -62,21 +62,21 @@ export default function HomePage() {
               vendre. Malheureusement, son groupe n&apos;avait pas les mêmes attentes donc pour cause de désaccord, ils mirent fin à leurs relations. Denis, décomposé, se retrouva seul avec sa femme
               et son camion... Puis un jour, son grand frère Richard lui rendit une petite visite et lui conseilla de venir voir son patron pizzaïolo situé à Perpignan, ce que Denis fît : il y resta 4
               jours consécutifs pendant lesquels il passa ses journées assis devant lui à le regarder travailler, à scruter tous ses faits et gestes dans le moindre détail sans jamais rien toucher,
-              car c&apos;est ce qui lui avait ordonné de faire : <span className="italic">&quot;Assieds-toi et regardes !&quot;</span> Il y a une chose qu&apos;il faut savoir, c&apos;est qu&apos;à ce
-              moment-là, Denis n&apos;avait encore jamais de sa vie dégusté une pizza, c&apos;est dire si c&apos;était un univers inconnu pour lui !
+              car c&apos;est ce qu&apos;il lui avait ordonné de faire : <span className="italic">&quot;Assieds-toi et regardes !&quot;</span> Il y a une chose qu&apos;il faut savoir, c&apos;est
+              qu&apos;à ce moment-là, Denis n&apos;avait encore jamais de sa vie dégusté une pizza, c&apos;est dire si c&apos;était un univers inconnu pour lui !
             </p>
           </div>
           <p className="mb-5">
             Après cette expérience bénéfique, Denis rentra chez lui, s&apos;entraîna sans relâche, dans un premier temps à faire la pâte, les pâtons, puis les garnins, à les faire cuire.
             <br />
-            Au début, il faut bien avouer que c&apos;était chaotique mais avec de l&apos;entraînement et beaucoup de volonté, il réussit. Il finit par se lançer et commença à travailler sur les
+            Au début, il faut bien avouer que c&apos;était chaotique mais avec de l&apos;entraînement et beaucoup de volonté, il réussit. Il finit par se lancer et commença à travailler sur les
             marchés, au Barcarés, à Pia, à Bompas, à Saint Laurent de la Salanque en face du café bleu <span className="italic">&quot;Le commerce&quot;</span> ou bien en face de la mairie, beaucoup
-            s&apos;en rappellent !
+            s&apos;en souviennent !
           </p>
           <div className="flex flex-col-reverse items-center my-5 sm:block sm:m-0">
             <Image className="w-auto m-0 sm:mb-5 sm:mr-5 float-left rounded-lg shadow-md" src={shopImage} alt="La facade du magasin Pizza Denis de nuit" height={350} />
             <p className="mb-5">
-              Avec les années, Denis se créa une réputation, un nom, une clientèle fidèle qui lui permit de se rapprocher des gens à tel point que ses clients sont devenus des amis, il les a vu
+              Avec les années, Denis se créa une réputation, un nom, une clientèle fidèle qui lui permit de se rapprocher des gens à tel point que ses clients sont devenus des amis, il les a vus
               vieillir, donner la vie pour certains, malheureusement mourir, cela fait partie des côtés du commerce. C&apos;est une expérience qui l&apos;a beaucoup enrichi humainement et qui
               perdure... Il continua à travailler pendant une dizaine d&apos;années avec son camion, à faire les marchés, jusqu&apos;au jour où il décida de vendre son camion pour pouvoir
               s&apos;installer dans un magasin à Saint Laurent de la Salanque.
