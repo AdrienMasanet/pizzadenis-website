@@ -60,4 +60,13 @@ describe("components | CurrentlyOpen", () => {
     const divElement = screen.getByTestId("container");
     expect(divElement).not.toHaveClass("neon-borders");
   });
+
+  it("should not render the normal opening hours when exceptionalClosureMessage is provided", () => {
+    mockedUseCurrentlyOpen.mockImplementation(() => [true, "Currently open!"]);
+
+    render(<CurrentlyOpen exceptionalClosureMessage="Exceptional closure" />);
+
+    expect(screen.queryByText("Currently open!")).not.toBeInTheDocument();
+    expect(screen.getByText("Exceptional closure")).toBeInTheDocument();
+  });
 });
