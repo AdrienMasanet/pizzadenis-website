@@ -42,7 +42,7 @@ const MainSlider = () => {
         <br />
         <span className="px-3 text-4xl rounded-lg">à emporter ou à déguster sur place</span>
       </p>
-      <CurrentlyOpen />
+      <CurrentlyOpen exceptionalClosureMessage={process.env.NEXT_PUBLIC_EXCEPTIONAL_CLOSURE_MESSAGE} />
       <div className="absolute right-0 bottom-0">
         <TripAdvisorLabel />
       </div>
