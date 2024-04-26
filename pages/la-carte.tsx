@@ -25,10 +25,8 @@ export default function MenuPage() {
       <main className="wooden-wall p-5 md:py-16">
         <Title text="Nos pizzas" whiteOutline />
         <Subtitle whiteOutline>
-          Voici la carte des pizzas que vous pouvez commander à emporter ! Elles
-          sont préparées au feu de bois avec des ingrédients frais et délicieux.
-          Nous vous proposons des pizzas gourmandes, des pizzas aux fruits de
-          mer ou des pizzas végétariennes, à vous de choisir !
+          Voici la carte des pizzas que vous pouvez commander à emporter ! Elles sont préparées au feu de bois avec des ingrédients frais et délicieux. Nous vous proposons des pizzas gourmandes, des
+          pizzas aux fruits de mer ou des pizzas végétariennes, à vous de choisir !
         </Subtitle>
         <section className="max-w-screen-xl mx-auto">
           <AccordionMenu
@@ -55,20 +53,14 @@ export default function MenuPage() {
                   <ul className="text-sm">
                     {Object.keys(getSupplements()).map((supplementsByPrice) => (
                       <li key={supplementsByPrice}>
-                        {getSupplements()[supplementsByPrice].map(
-                          (supplement: Ingredient, index) => (
-                            <span key={supplement.name}>
-                              &nbsp;
-                              {supplement.name}
-                              {index <
-                              getSupplements()[supplementsByPrice].length - 1
-                                ? ", "
-                                : ""}
-                            </span>
-                          ),
-                        )}
-                        &nbsp;:{" "}
-                        <span className="underline">{supplementsByPrice}€</span>
+                        {getSupplements()[supplementsByPrice].map((supplement: Ingredient, index) => (
+                          <span key={supplement.name}>
+                            &nbsp;
+                            {supplement.name}
+                            {index < getSupplements()[supplementsByPrice].length - 1 ? ", " : ""}
+                          </span>
+                        ))}
+                        &nbsp;: <span className="underline">{supplementsByPrice}€</span>
                       </li>
                     ))}
                   </ul>

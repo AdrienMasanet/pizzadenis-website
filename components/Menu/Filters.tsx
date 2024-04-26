@@ -13,11 +13,9 @@ const Filters = () => {
   useEffect(() => {
     nameInput.current!.value = pizzaListFilters.name || "";
     baseInput.current!.value = pizzaListFilters.base || "all";
-    vegetarianOnlyInput.current!.checked =
-      pizzaListFilters.vegetarianOnly || false;
+    vegetarianOnlyInput.current!.checked = pizzaListFilters.vegetarianOnly || false;
     containsMeatInput.current!.checked = pizzaListFilters.containsMeat || false;
-    containsSeaFoodInput.current!.checked =
-      pizzaListFilters.containsSeaFood || false;
+    containsSeaFoodInput.current!.checked = pizzaListFilters.containsSeaFood || false;
   }, [pizzaListFilters]);
 
   return (

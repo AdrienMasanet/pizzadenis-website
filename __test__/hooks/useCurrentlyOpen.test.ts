@@ -66,50 +66,32 @@ describe("hooks | useCurrentlyOpen", () => {
       {
         // Sunday 5 march 20h30 to test the closing very soon message
         date: new Date("2023-03-05T20:30:00"),
-        expected: [
-          true,
-          "Attention, nous fermons très bientôt (dans 30 minutes) !",
-        ],
+        expected: [true, "Attention, nous fermons très bientôt (dans 30 minutes) !"],
       },
       {
         // Sunday 5 march 20h59 to test the closing very soon message
         date: new Date("2023-03-05T20:59:00"),
-        expected: [
-          true,
-          "Attention, nous fermons très bientôt (dans 1 minutes) !",
-        ],
+        expected: [true, "Attention, nous fermons très bientôt (dans 1 minutes) !"],
       },
       {
         // Sunday 5 march 21h00 to test the closed message on a business day
         date: new Date("2023-03-05T21:00:00"),
-        expected: [
-          false,
-          "Nous sommes fermés... Rendez-vous dès mardi à 18:00h !",
-        ],
+        expected: [false, "Nous sommes fermés... Rendez-vous dès mardi à 18:00h !"],
       },
       {
         // Tuesday 7 march 22h45 to test the closed message on a business day but with 2 days off after
         date: new Date("2023-03-07T22:45:00"),
-        expected: [
-          false,
-          "Nous sommes fermés... Rendez-vous dès vendredi à 18:00h !",
-        ],
+        expected: [false, "Nous sommes fermés... Rendez-vous dès vendredi à 18:00h !"],
       },
       {
         // Wednesday 8 march 09h13 to test the closed message on a day off morning
         date: new Date("2023-03-08T09:13:00"),
-        expected: [
-          false,
-          "Nous sommes fermés... Rendez-vous dès vendredi à 18:00h !",
-        ],
+        expected: [false, "Nous sommes fermés... Rendez-vous dès vendredi à 18:00h !"],
       },
       {
         // Thursday 9 march 16h46 to test the closed message on a day off morning but with a business day after
         date: new Date("2023-03-09T16:46:00"),
-        expected: [
-          false,
-          "Nous sommes fermés... Rendez-vous dès demain à 18:00h !",
-        ],
+        expected: [false, "Nous sommes fermés... Rendez-vous dès demain à 18:00h !"],
       },
     ];
 
@@ -131,9 +113,6 @@ describe("hooks | useCurrentlyOpen", () => {
     const date = new Date("2023-03-04T23:17:00");
     const result = useCurrentlyOpen(date);
 
-    expect(result).toEqual([
-      false,
-      "Nous sommes fermés... Rendez-vous dès demain à 18:00h !",
-    ]);
+    expect(result).toEqual([false, "Nous sommes fermés... Rendez-vous dès demain à 18:00h !"]);
   });
 });

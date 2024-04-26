@@ -3,12 +3,7 @@ import "@testing-library/jest-dom";
 import Title from "@/components/Title/Title";
 
 describe("components | Title", () => {
-  const testTitles: string[] = [
-    "Hello World",
-    "Test Title",
-    "Title containing many spaces",
-    "Title  with   irregular spac     ing",
-  ];
+  const testTitles: string[] = ["Hello World", "Test Title", "Title containing many spaces", "Title  with   irregular spac     ing"];
 
   testTitles.forEach((text) => {
     it(`should render the title with correct colors for each character`, () => {

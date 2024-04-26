@@ -9,28 +9,17 @@ import socialSoundcloudImage from "@/public/images/social/soundcloud.svg";
 
 const Footer = () => {
   return (
-    <footer
-      className="w-full bg-stone-900 text-white border-t-4 border-white/85 border-double"
-      id="footer"
-    >
+    <footer className="w-full bg-stone-900 text-white border-t-4 border-white/85 border-double" id="footer">
       <div className="max-w-screen-md mx-auto p-4 flex flex-col md:flex-row justify-evenly items-center md:gap-10">
         <nav className="order-2 md:order-1 flex-1 flex flex-col items-center md:items-end">
           <Link className="w-fit h-12 md:h-auto hoverable white" href="/">
             Accueil
           </Link>
-          <Link
-            className="w-fit h-12 md:h-auto hoverable white"
-            href="la-carte"
-          >
+          <Link className="w-fit h-12 md:h-auto hoverable white" href="la-carte">
             La carte des pizzas
           </Link>
         </nav>
-        <Image
-          src={logoImage}
-          alt="Pizza Denis depuis 1984"
-          height={150}
-          className="order-1 md:order-2 flex-1 my-10 invert"
-        />
+        <Image src={logoImage} alt="Pizza Denis depuis 1984" height={150} className="order-1 md:order-2 flex-1 my-10 invert" />
         <nav className="order-3 md:order-3 flex-1 flex flex-col items-center md:items-start mb-10 md:mb-0">
           <Link className="w-fit h-12 md:h-auto hoverable white" href="equipe">
             L&apos;équipe
@@ -41,26 +30,10 @@ const Footer = () => {
         </nav>
       </div>
       <div className="w-fit mx-auto mb-14 flex-1 flex items-center gap-5">
-        <SocialMediaIcon
-          name="Facebook"
-          link="https://www.facebook.com/people/Pizza-Denis/100054484358825/?locale=fr_FR"
-          image={socialFacebookImage}
-        />
-        <SocialMediaIcon
-          name="Youtube"
-          link="https://www.youtube.com/@pizzadenis/videos"
-          image={socialYoutubeImage}
-        />
-        <SocialMediaIcon
-          name="Soundcloud"
-          link="https://soundcloud.com/pizzadenis"
-          image={socialSoundcloudImage}
-        />
-        <SocialMediaIcon
-          name="Instagram"
-          link="https://www.instagram.com"
-          image={socialInstagramImage}
-        />
+        <SocialMediaIcon name="Facebook" link="https://www.facebook.com/people/Pizza-Denis/100054484358825/?locale=fr_FR" image={socialFacebookImage} />
+        <SocialMediaIcon name="Youtube" link="https://www.youtube.com/@pizzadenis/videos" image={socialYoutubeImage} />
+        <SocialMediaIcon name="Soundcloud" link="https://soundcloud.com/pizzadenis" image={socialSoundcloudImage} />
+        <SocialMediaIcon name="Instagram" link="https://www.instagram.com" image={socialInstagramImage} />
       </div>
       <hr className="my-1 opacity-10" />
       <p className="w-fit mx-auto py-1 text-center text-stone-600">

@@ -12,11 +12,7 @@ const MenuBar = () => {
 
   const handleClickOutsideMobileMenu = useCallback(
     (event: MouseEvent) => {
-      if (
-        isMobileMenuOpen &&
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
-      ) {
+      if (isMobileMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     },
@@ -25,9 +21,7 @@ const MenuBar = () => {
 
   const checkViewportWidth = useCallback(() => {
     if (typeof window !== "undefined") {
-      window.innerWidth >= 768
-        ? setIsSmallScreen(false)
-        : setIsSmallScreen(true);
+      window.innerWidth >= 768 ? setIsSmallScreen(false) : setIsSmallScreen(true);
     }
   }, []);
 
@@ -45,9 +39,7 @@ const MenuBar = () => {
     return (
       <header className="pb-12">
         <div className="-top-px z-30 w-full fixed bg-stone-50/80 backdrop-blur-sm">
-          <div
-            className={`${isMobileMenuOpen ? "" : "border-b border-black/20 shadow-md transition-all duration-700 delay-500"} px-4 py-2 flex justify-between align-middle`}
-          >
+          <div className={`${isMobileMenuOpen ? "" : "border-b border-black/20 shadow-md transition-all duration-700 delay-500"} px-4 py-2 flex justify-between align-middle`}>
             <Image
               className="select-none"
               src={logoImage}
@@ -106,28 +98,14 @@ const MenuBar = () => {
             ref={mobileMenuRef}
             className={`${isMobileMenuOpen ? "border-b border-black/20 shadow-2xl" : "py-0 shadow-none"} transition-all duration-700 overflow-hidden select-none`}
             style={{
-              maxHeight: isMobileMenuOpen
-                ? mobileMenuRef.current?.scrollHeight + "px"
-                : "0px",
+              maxHeight: isMobileMenuOpen ? mobileMenuRef.current?.scrollHeight + "px" : "0px",
             }}
           >
             <div className="flex flex-col gap-5 w-fit mx-auto pt-5 pb-10 text-center font-bignoodletitling text-lg select-none">
-              <MenuBarItem
-                text="Accueil"
-                link="/"
-                onClickCallback={() => setIsMobileMenuOpen(false)}
-              />
-              <MenuBarItem
-                text="La carte des pizzas"
-                link="/la-carte"
-                onClickCallback={() => setIsMobileMenuOpen(false)}
-              />
+              <MenuBarItem text="Accueil" link="/" onClickCallback={() => setIsMobileMenuOpen(false)} />
+              <MenuBarItem text="La carte des pizzas" link="/la-carte" onClickCallback={() => setIsMobileMenuOpen(false)} />
               {/*<MenuBarItem text="L'équipe" link="/equipe" onClickCallback={() => setIsMobileMenuOpen(false)} />*/}
-              <MenuBarItem
-                text="Nous contacter"
-                link="/contact"
-                onClickCallback={() => setIsMobileMenuOpen(false)}
-              />
+              <MenuBarItem text="Nous contacter" link="/contact" onClickCallback={() => setIsMobileMenuOpen(false)} />
             </div>
           </nav>
         </div>

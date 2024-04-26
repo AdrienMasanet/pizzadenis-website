@@ -13,22 +13,13 @@ const Title = ({ text, whiteOutline }: TitleProps) => {
     colorIndex++; // Index was not incremented if a space was found thanks to the early return above
 
     return (
-      <span
-        key={index}
-        className={`text-${colorIndex % 2 === 0 ? "red" : "green"}-800`}
-      >
+      <span key={index} className={`text-${colorIndex % 2 === 0 ? "red" : "green"}-800`}>
         {letter}
       </span>
     );
   });
 
-  return (
-    <h1
-      className={`mt-16 mb-6 text-center text-5xl font-roastchicken uppercase ${whiteOutline ? "white-outline" : ""}`}
-    >
-      {letters}
-    </h1>
-  );
+  return <h1 className={`mt-16 mb-6 text-center text-5xl font-roastchicken uppercase ${whiteOutline ? "white-outline" : ""}`}>{letters}</h1>;
 };
 
 export default Title;

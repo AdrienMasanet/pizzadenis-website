@@ -18,9 +18,7 @@ const Menu = ({ pizzas }: MenuProps) => {
 
   return (
     <div className="">
-      <p className="text-center text-xs white-outline my-5">
-        {getResultText(pizzas.length)}
-      </p>
+      <p className="text-center text-xs white-outline my-5">{getResultText(pizzas.length)}</p>
       <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {pizzas.map((pizza, index) => (
           <PizzaMenuItem pizza={pizza} key={index} />

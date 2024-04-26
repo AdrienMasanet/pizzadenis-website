@@ -8,11 +8,7 @@ type MenuBarItemProps = {
   onClickCallback?: () => void;
 };
 
-export const MenuBarItem = ({
-  text,
-  link,
-  onClickCallback,
-}: MenuBarItemProps) => {
+export const MenuBarItem = ({ text, link, onClickCallback }: MenuBarItemProps) => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState<string>("");
 
@@ -21,11 +17,7 @@ export const MenuBarItem = ({
   }, [router]);
 
   return (
-    <Link
-      className={`${link === currentPath ? "active" : ""} list-none rounded hoverable select-none`}
-      href={link}
-      onClick={onClickCallback}
-    >
+    <Link className={`${link === currentPath ? "active" : ""} list-none rounded hoverable select-none`} href={link} onClick={onClickCallback}>
       {text}
     </Link>
   );
