@@ -17,9 +17,10 @@ describe("components | CurrentlyOpen", () => {
     // Set up the mock implementation for the hook
     mockedUseCurrentlyOpen.mockImplementation(() => [true, "Currently open!"]);
 
-    render(<CurrentlyOpen />);
+    const renderedComponent = render(<CurrentlyOpen />);
 
     expect(screen.getByText("Currently open!")).toBeInTheDocument();
+    expect(renderedComponent).toMatchSnapshot();
   });
 
   it("should update the opening status and message every 10 seconds", () => {
@@ -61,5 +62,14 @@ describe("components | CurrentlyOpen", () => {
 
     const divElement = screen.getByTestId("container");
     expect(divElement).not.toHaveClass("neon-borders");
+  });
+
+  it("should not render the normal opening hours when exceptionalClosureMessage is provided", () => {
+    mockedUseCurrentlyOpen.mockImplementation(() => [true, "Currently open!"]);
+
+    render(<CurrentlyOpen exceptionalClosureMessage="Exceptional closure" />);
+
+    expect(screen.queryByText("Currently open!")).not.toBeInTheDocument();
+    expect(screen.getByText("Exceptional closure")).toBeInTheDocument();
   });
 });

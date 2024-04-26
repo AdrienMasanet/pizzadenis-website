@@ -1,7 +1,11 @@
 import useCurrentlyOpen from "@/hooks/useCurrentlyOpen";
 import { useEffect, useState } from "react";
 
-const CurrentlyOpen = () => {
+type CurrentlyOpenProps = {
+  exceptionalClosureMessage?: string;
+};
+
+const CurrentlyOpen = ({ exceptionalClosureMessage }: CurrentlyOpenProps) => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [isOpen, message] = useCurrentlyOpen(currentDateTime);
 
@@ -16,10 +20,10 @@ const CurrentlyOpen = () => {
   return (
     <div className="mx-12 md:mx-5">
       <div
-        className={`${isOpen ? "neon-borders" : ""} w-fit px-3 py-2 mx-auto my-10 rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg`}
+        className={`${!exceptionalClosureMessage && isOpen ? "neon-borders" : ""} w-fit px-3 py-2 mx-auto my-10 rounded-lg bg-stone-50/60 border border-black/20 backdrop-blur-sm shadow-lg`}
         data-testid="container"
       >
-        <p>{message}</p>
+        <p>{exceptionalClosureMessage || message}</p>
       </div>
     </div>
   );

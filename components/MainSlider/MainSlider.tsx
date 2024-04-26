@@ -51,7 +51,7 @@ const MainSlider = () => {
         </span>
         <br />
       </p>
-      <CurrentlyOpen />
+      <CurrentlyOpen exceptionalClosureMessage={process.env.NEXT_PUBLIC_EXCEPTIONAL_CLOSURE_MESSAGE} />
       <div className="absolute right-0 bottom-0">
         <TripAdvisorLabel />
       </div>
