@@ -8,7 +8,10 @@ import TripAdvisorLabel from "@/components/TripAdvisorLabel/TripAdvisorLabel";
 import dynamic from "next/dynamic";
 
 // Importing this component dynamically to only load it on the client side and avoid hydration errors
-const CurrentlyOpen = dynamic(() => import("@/components/CurrentlyOpen/CurrentlyOpen"), { ssr: false });
+const CurrentlyOpen = dynamic(
+  () => import("@/components/CurrentlyOpen/CurrentlyOpen"),
+  { ssr: false }
+);
 
 const MainSlider = () => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -36,19 +39,34 @@ const MainSlider = () => {
 
   return (
     <div className="relative w-full py-28 md:py-36 overflow-hidden">
-      <Image src={logoImage} alt="Pizza Denis depuis 1984" width={300} className="p-3 object-cover mx-auto white-outline" />
+      <Image
+        src={logoImage}
+        alt="Pizza Denis depuis 1984"
+        width={300}
+        className="p-3 object-cover mx-auto white-outline"
+      />
       <p className="mx-auto p-2 md:mb-20 font-babyaletha text-xl leading-9 text-center w-fit white-outline">
-        <span className="px-3 text-4xl rounded-lg rounded-b-none">Pizzas au feu de bois</span>
+        <span className="px-3 text-4xl rounded-lg rounded-b-none">
+          Pizzas au feu de bois à emporter
+        </span>
         <br />
-        <span className="px-3 text-4xl rounded-lg">à emporter ou à déguster sur place</span>
       </p>
       <CurrentlyOpen />
       <div className="absolute right-0 bottom-0">
         <TripAdvisorLabel />
       </div>
-      <div ref={sliderRef} className="keen-slider h-full !absolute top-0 -z-10 opacity-40">
+      <div
+        ref={sliderRef}
+        className="keen-slider h-full !absolute top-0 -z-10 opacity-40"
+      >
         <div className="keen-slider__slide">
-          <Image src={sliderImage1} alt="Slider image 1" fill className="object-cover" priority />
+          <Image
+            src={sliderImage1}
+            alt="Slider image 1"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
         <div className="keen-slider__slide slider-video">
           <iframe
@@ -61,7 +79,12 @@ const MainSlider = () => {
           />
         </div>
         <div className="keen-slider__slide">
-          <Image src={sliderImage2} alt="Slider image 2" fill className="object-cover" />
+          <Image
+            src={sliderImage2}
+            alt="Slider image 2"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
     </div>
