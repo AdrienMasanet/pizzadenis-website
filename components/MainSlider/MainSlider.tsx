@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 // Importing this component dynamically to only load it on the client side and avoid hydration errors
 const CurrentlyOpen = dynamic(
   () => import("@/components/CurrentlyOpen/CurrentlyOpen"),
-  { ssr: false }
+  { ssr: false },
 );
 
 const MainSlider = () => {
@@ -34,7 +34,7 @@ const MainSlider = () => {
         slider.on("animationEnded", nextTimeout);
         slider.on("updated", nextTimeout);
       },
-    ]
+    ],
   );
 
   return (

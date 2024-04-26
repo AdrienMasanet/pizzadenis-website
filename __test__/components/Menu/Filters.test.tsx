@@ -9,7 +9,7 @@ describe("components | Filters", () => {
     return render(
       <PizzaListProvider>
         <Filters />
-      </PizzaListProvider>
+      </PizzaListProvider>,
     );
   };
 
@@ -26,11 +26,19 @@ describe("components | Filters", () => {
   it("should update filters state when input values change", () => {
     renderFilters();
 
-    fireEvent.change(screen.getByPlaceholderText("Recherche"), { target: { value: "Royale" } });
-    fireEvent.change(screen.getByLabelText("Avec viande"), { target: { checked: true } });
+    fireEvent.change(screen.getByPlaceholderText("Recherche"), {
+      target: { value: "Royale" },
+    });
+    fireEvent.change(screen.getByLabelText("Avec viande"), {
+      target: { checked: true },
+    });
 
-    expect((screen.getByPlaceholderText("Recherche") as HTMLInputElement).value).toBe("Royale");
-    expect((screen.getByLabelText("Avec viande") as HTMLInputElement).checked).toBe(true);
+    expect(
+      (screen.getByPlaceholderText("Recherche") as HTMLInputElement).value,
+    ).toBe("Royale");
+    expect(
+      (screen.getByLabelText("Avec viande") as HTMLInputElement).checked,
+    ).toBe(true);
   });
 
   it("should uncheck 'Avec viande' and 'Avec fruits de mer' when 'Végétarienne' is checked", () => {
@@ -40,8 +48,12 @@ describe("components | Filters", () => {
     fireEvent.click(screen.getByLabelText("Avec fruits de mer"));
     fireEvent.click(screen.getByLabelText("Végétarienne"));
 
-    expect((screen.getByLabelText("Avec viande") as HTMLInputElement).checked).toBe(false);
-    expect((screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked).toBe(false);
+    expect(
+      (screen.getByLabelText("Avec viande") as HTMLInputElement).checked,
+    ).toBe(false);
+    expect(
+      (screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked,
+    ).toBe(false);
   });
 
   it("should uncheck 'Végétarienne' when either 'Avec viande' or 'Avec fruits de mer' is checked", () => {
@@ -50,15 +62,21 @@ describe("components | Filters", () => {
     fireEvent.click(screen.getByLabelText("Végétarienne"));
     fireEvent.click(screen.getByLabelText("Avec viande"));
 
-    expect((screen.getByLabelText("Végétarienne") as HTMLInputElement).checked).toBe(false);
+    expect(
+      (screen.getByLabelText("Végétarienne") as HTMLInputElement).checked,
+    ).toBe(false);
   });
 
   it("should update filters state when select value changes", () => {
     renderFilters();
 
-    fireEvent.change(screen.getByTestId("base-select"), { target: { value: "Base tomate" } });
+    fireEvent.change(screen.getByTestId("base-select"), {
+      target: { value: "Base tomate" },
+    });
 
-    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe("Base tomate");
+    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe(
+      "Base tomate",
+    );
   });
 
   it("should set the select value based on pizzaListFilters", () => {
@@ -77,14 +95,24 @@ describe("components | Filters", () => {
         }}
       >
         <Filters />
-      </PizzaListContext.Provider>
+      </PizzaListContext.Provider>,
     );
 
-    expect((screen.getByPlaceholderText("Recherche") as HTMLInputElement).value).toBe("Roy");
-    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe("all");
-    expect((screen.getByLabelText("Végétarienne") as HTMLInputElement).checked).toBe(false);
-    expect((screen.getByLabelText("Avec viande") as HTMLInputElement).checked).toBe(true);
-    expect((screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked).toBe(true);
+    expect(
+      (screen.getByPlaceholderText("Recherche") as HTMLInputElement).value,
+    ).toBe("Roy");
+    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe(
+      "all",
+    );
+    expect(
+      (screen.getByLabelText("Végétarienne") as HTMLInputElement).checked,
+    ).toBe(false);
+    expect(
+      (screen.getByLabelText("Avec viande") as HTMLInputElement).checked,
+    ).toBe(true);
+    expect(
+      (screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked,
+    ).toBe(true);
   });
 
   it("should use defined default values in the component mount if no value is provided in the context", () => {
@@ -97,13 +125,23 @@ describe("components | Filters", () => {
         }}
       >
         <Filters />
-      </PizzaListContext.Provider>
+      </PizzaListContext.Provider>,
     );
 
-    expect((screen.getByPlaceholderText("Recherche") as HTMLInputElement).value).toBe("");
-    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe("all");
-    expect((screen.getByLabelText("Végétarienne") as HTMLInputElement).checked).toBe(false);
-    expect((screen.getByLabelText("Avec viande") as HTMLInputElement).checked).toBe(false);
-    expect((screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked).toBe(false);
+    expect(
+      (screen.getByPlaceholderText("Recherche") as HTMLInputElement).value,
+    ).toBe("");
+    expect((screen.getByTestId("base-select") as HTMLSelectElement).value).toBe(
+      "all",
+    );
+    expect(
+      (screen.getByLabelText("Végétarienne") as HTMLInputElement).checked,
+    ).toBe(false);
+    expect(
+      (screen.getByLabelText("Avec viande") as HTMLInputElement).checked,
+    ).toBe(false);
+    expect(
+      (screen.getByLabelText("Avec fruits de mer") as HTMLInputElement).checked,
+    ).toBe(false);
   });
 });

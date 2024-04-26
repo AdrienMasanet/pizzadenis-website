@@ -9,12 +9,17 @@ describe("page | Error404Page", () => {
       <>
         <Error404Page />
         <FooterMock />
-      </>
+      </>,
     );
 
-    const footerElement: HTMLDivElement = document.querySelector("footer") as HTMLDivElement;
+    const footerElement: HTMLDivElement = document.querySelector(
+      "footer",
+    ) as HTMLDivElement;
     const footerElementHeight: number = parseInt(footerElement.style.height);
-    Object.defineProperty(HTMLElement.prototype, "offsetHeight", { configurable: true, value: footerElementHeight });
+    Object.defineProperty(HTMLElement.prototype, "offsetHeight", {
+      configurable: true,
+      value: footerElementHeight,
+    });
   });
 
   it("should render the h1 title", () => {
@@ -28,7 +33,9 @@ describe("page | Error404Page", () => {
     const subtitle = screen.getByRole("heading", { level: 2 });
 
     expect(subtitle).toBeInTheDocument();
-    expect(subtitle).toHaveTextContent("Il semblerait que cette page n'existe pas !");
+    expect(subtitle).toHaveTextContent(
+      "Il semblerait que cette page n'existe pas !",
+    );
   });
 
   it("should render the image with correct alt attribute", () => {
@@ -40,7 +47,9 @@ describe("page | Error404Page", () => {
     const mainElement = screen.getByRole("main");
 
     await waitFor(() => {
-      expect(window.getComputedStyle(mainElement).getPropertyValue("min-height")).toEqual("calc(100vh - 100px)");
+      expect(
+        window.getComputedStyle(mainElement).getPropertyValue("min-height"),
+      ).toEqual("calc(100vh - 100px)");
     });
   });
 });

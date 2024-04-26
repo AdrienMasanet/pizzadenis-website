@@ -21,10 +21,14 @@ export default function ContactPage() {
       <main className="bg-contact p-5 md:py-16">
         <Title text="Contactez-nous" whiteOutline />
         <Subtitle whiteOutline>
-          Vous avez des questions, des suggestions ou des demandes particulières ?
+          Vous avez des questions, des suggestions ou des demandes particulières
+          ?
           <br />
           N&apos;hésitez pas à passer au magasin ou bien à nous joindre au&nbsp;
-          <a className="text-xl font-black text-green-800 underline" href="tel:0468285858">
+          <a
+            className="text-xl font-black text-green-800 underline"
+            href="tel:0468285858"
+          >
             04 68 28 58 58
           </a>
           &nbsp; !
@@ -42,13 +46,21 @@ export default function ContactPage() {
             items={[
               {
                 title: "Quels sont les modes de paiement acceptés ?",
-                children: <p>Nous acceptons les paiements par carte bancaire, paylib, espèces et cartes ticket restaurant. Attention, nous ne prenons pas les chèques !</p>,
+                children: (
+                  <p>
+                    Nous acceptons les paiements par carte bancaire, paylib,
+                    espèces et cartes ticket restaurant. Attention, nous ne
+                    prenons pas les chèques !
+                  </p>
+                ),
               },
               {
                 title: "Acceptez-vous les tickets restaurants ?",
                 children: (
                   <p>
-                    Oui, nous prenons les tickets Edenred, Apetiz, Sodexo, les chèques de table et les chèques déjeuner. Attention, nous ne prenons pas les chèques ANCV ni les tickets restaurant au
+                    Oui, nous prenons les tickets Edenred, Apetiz, Sodexo, les
+                    chèques de table et les chèques déjeuner. Attention, nous ne
+                    prenons pas les chèques ANCV ni les tickets restaurant au
                     format papier !
                   </p>
                 ),
@@ -57,7 +69,9 @@ export default function ContactPage() {
                 title: "Faites-vous des livraisons ?",
                 children: (
                   <p>
-                    Malheureusement, nous ne pouvons pas livrer à domicile. Vous pouvez commander vos pizzas à emporter et nous vous donnerons une heure approximative où vous pourrez venir les
+                    Malheureusement, nous ne pouvons pas livrer à domicile. Vous
+                    pouvez commander vos pizzas à emporter et nous vous
+                    donnerons une heure approximative où vous pourrez venir les
                     récupérer !
                   </p>
                 ),
@@ -66,7 +80,9 @@ export default function ContactPage() {
                 title: "Pourquoi êtes vous sur SoundCloud ?",
                 children: (
                   <p>
-                    C&apos;est parce que Denis est aussi un musicien passionné qui compose et joue de la musique ! Vous pouvez écouter ses compositions sur son profil SoundCloud ou venir au magasin
+                    C&apos;est parce que Denis est aussi un musicien passionné
+                    qui compose et joue de la musique ! Vous pouvez écouter ses
+                    compositions sur son profil SoundCloud ou venir au magasin
                     parler guitare avec lui 🎸
                   </p>
                 ),

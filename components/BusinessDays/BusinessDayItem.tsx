@@ -14,9 +14,13 @@ const BusinessDayItem = ({ businessDay }: BusinessDayItemProps) => {
         </td>
         {!businessDay.dayOff && businessDay.startHour && businessDay.endHour ? (
           <>
-            <td className="text-center">{formatToHumanHour(businessDay.startHour)}</td>
+            <td className="text-center">
+              {formatToHumanHour(businessDay.startHour)}
+            </td>
             <td className="px-2 mx-2">|</td>
-            <td className="text-center">{formatToHumanHour(businessDay.endHour)}</td>
+            <td className="text-center">
+              {formatToHumanHour(businessDay.endHour)}
+            </td>
           </>
         ) : (
           <td className="text-center text-red-500" colSpan={3}>

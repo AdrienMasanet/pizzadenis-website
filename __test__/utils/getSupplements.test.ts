@@ -36,7 +36,9 @@ describe("utils | getSupplements", () => {
 
   it("should exclude ingredients without a priceAsSupplement", () => {
     const supplements = getSupplements();
-    const hasSalmon = supplements["1.5"].some((ingredient: Ingredient) => ingredient.name === "Saumon");
+    const hasSalmon = supplements["1.5"].some(
+      (ingredient: Ingredient) => ingredient.name === "Saumon",
+    );
 
     expect(hasSalmon).toBe(false);
   });

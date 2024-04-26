@@ -10,10 +10,16 @@ import formatToHumanHour from "@/utils/formatToHumanHour";
 const useCurrentlyOpen = (today: Date) => {
   const currentHour = parseFloat(today.getHours() + "." + today.getMinutes());
   const currentDay: BusinessDay = businessDays[today.getDay()];
-  const isOpen = !currentDay.dayOff && currentHour >= currentDay.startHour! && currentHour < currentDay.endHour!;
+  const isOpen =
+    !currentDay.dayOff &&
+    currentHour >= currentDay.startHour! &&
+    currentHour < currentDay.endHour!;
   let message = "";
 
-  const getNextOpeningDay = (from: number, tomorrow: boolean = true): BusinessDay => {
+  const getNextOpeningDay = (
+    from: number,
+    tomorrow: boolean = true,
+  ): BusinessDay => {
     let dayIterator = from + 1;
 
     if (dayIterator > 6) {
@@ -32,30 +38,58 @@ const useCurrentlyOpen = (today: Date) => {
   };
 
   const getMinutesDifference = (state: "closing" | "opening"): number => {
-    const eventTime: Date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), state === "closing" ? currentDay.endHour : currentDay.startHour, 0, 0);
-    const millisecondsDifference = (eventTime.getTime() - today.getTime()) as number;
+    const eventTime: Date = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      state === "closing" ? currentDay.endHour : currentDay.startHour,
+      0,
+      0,
+    );
+    const millisecondsDifference = (eventTime.getTime() -
+      today.getTime()) as number;
     const minutesDifference = Math.floor(millisecondsDifference / 60000);
 
     return minutesDifference;
   };
 
-  if (currentDay.dayOff || !currentDay.startHour || !currentDay.endHour || getMinutesDifference("closing") <= 0) {
+  if (
+    currentDay.dayOff ||
+    !currentDay.startHour ||
+    !currentDay.endHour ||
+    getMinutesDifference("closing") <= 0
+  ) {
     message = `Nous sommes fermés... Rendez-vous dès ${getNextOpeningDay(today.getDay()).name} à ${formatToHumanHour(getNextOpeningDay(today.getDay()).startHour!)}h !`;
   } else if (getMinutesDifference("opening") > 90) {
     message = `Nous ouvrons à ${formatToHumanHour(currentDay.startHour)}h !`;
-  } else if (getMinutesDifference("opening") <= 90 && getMinutesDifference("opening") > 30) {
+  } else if (
+    getMinutesDifference("opening") <= 90 &&
+    getMinutesDifference("opening") > 30
+  ) {
     // Between 90 and 30 minutes before opening
     message = "Nous ouvrons bientôt !";
-  } else if (getMinutesDifference("opening") <= 30 && getMinutesDifference("opening") > 0) {
+  } else if (
+    getMinutesDifference("opening") <= 30 &&
+    getMinutesDifference("opening") > 0
+  ) {
     // Between 30 and 0 minutes before opening
     message = "Nous ouvrons très bientôt !";
-  } else if (getMinutesDifference("opening") <= 0 && getMinutesDifference("closing") > 60) {
+  } else if (
+    getMinutesDifference("opening") <= 0 &&
+    getMinutesDifference("closing") > 60
+  ) {
     // Between opening hour and 60 minutes before closing
     message = "Nous sommes ouverts !";
-  } else if (getMinutesDifference("closing") <= 60 && getMinutesDifference("closing") > 30) {
+  } else if (
+    getMinutesDifference("closing") <= 60 &&
+    getMinutesDifference("closing") > 30
+  ) {
     // Between 60 and 30 minutes before closing
     message = `Nous fermons bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
-  } else if (getMinutesDifference("closing") <= 30 && getMinutesDifference("closing") > 0) {
+  } else if (
+    getMinutesDifference("closing") <= 30 &&
+    getMinutesDifference("closing") > 0
+  ) {
     // Between 30 and 0 minutes before closing
     message = `Attention, nous fermons très bientôt (dans ${getMinutesDifference("closing")} minutes) !`;
   }

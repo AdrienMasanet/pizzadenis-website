@@ -14,7 +14,7 @@ describe("components | BusinessDayItem", () => {
     render(
       <table>
         <BusinessDayItem businessDay={businessDay} />
-      </table>
+      </table>,
     );
   });
 
@@ -55,7 +55,7 @@ describe("components | BusinessDayItem", () => {
     render(
       <table>
         <BusinessDayItem businessDay={closedDay} />
-      </table>
+      </table>,
     );
 
     const closedStatusText = screen.getByText("Fermé");

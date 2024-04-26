@@ -4,5 +4,7 @@
  * @returns {string} The formatted price
  */
 export default function formatToEuroString(price: number): string {
-  return price.toLocaleString("fr-FR", { style: "currency", currency: "EUR" }).toString();
+  return price
+    .toLocaleString("fr-FR", { style: "currency", currency: "EUR" })
+    .toString();
 }

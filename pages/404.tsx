@@ -19,10 +19,20 @@ export default function Error404Page() {
       <Head>
         <title>Pizza Denis | Page non trouvée</title>
       </Head>
-      <main className="wooden-wall p-5 md:py-16 flex flex-col justify-center items-center" style={{ minHeight: `calc(100vh - ${footerHeight}px)` }}>
+      <main
+        className="wooden-wall p-5 md:py-16 flex flex-col justify-center items-center"
+        style={{ minHeight: `calc(100vh - ${footerHeight}px)` }}
+      >
         <Title text="Oups..." whiteOutline />
-        <Subtitle whiteOutline>Il semblerait que cette page n&apos;existe pas !</Subtitle>
-        <Image src={pizzaboxImage} alt="Boîte à pizza vide" className="my-auto drop-shadow-md select-none" height={400} />
+        <Subtitle whiteOutline>
+          Il semblerait que cette page n&apos;existe pas !
+        </Subtitle>
+        <Image
+          src={pizzaboxImage}
+          alt="Boîte à pizza vide"
+          className="my-auto drop-shadow-md select-none"
+          height={400}
+        />
       </main>
     </>
   );

@@ -52,7 +52,10 @@ describe("components | CurrentlyOpen", () => {
   });
 
   it("should not apply the 'neon-borders' class when the store is closed", () => {
-    mockedUseCurrentlyOpen.mockImplementation(() => [false, "Currently closed!"]);
+    mockedUseCurrentlyOpen.mockImplementation(() => [
+      false,
+      "Currently closed!",
+    ]);
 
     render(<CurrentlyOpen />);
 
